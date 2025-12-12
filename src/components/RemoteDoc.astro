@@ -1,0 +1,12 @@
+---
+interface Props {
+    source: string;
+}
+const {source} = Astro.props
+import { Markdown } from 'astro-remote';
+const  markdown = await fetch(source).then(res => res.text());
+
+---
+<Markdown content={markdown} />
+
+<p><em>This document is a replica of <a href={source}>the original</a>.</em></p>
