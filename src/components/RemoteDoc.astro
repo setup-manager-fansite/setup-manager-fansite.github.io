@@ -1,10 +1,14 @@
 ---
 interface Props {
     source: string;
+    removeh1: boolean;
 }
-const {source} = Astro.props
+const {source, removeh1} = Astro.props
 import { Markdown } from 'astro-remote';
-const  markdown = await fetch(source).then(res => res.text());
+var markdown = await fetch(source).then(res => res.text());
+if (removeh1 == '1') {
+    markdown = markdown.replace(new RegExp('^# .*'), '')
+}
 
 ---
 <Markdown content={markdown} />
