@@ -17,8 +17,8 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Documentation Replica',
+					autogenerate: { directory: 'docreplica' },
 				},
 			],
 		}),
