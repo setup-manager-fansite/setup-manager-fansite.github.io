@@ -1,0 +1,47 @@
+---
+export interface Props {
+  repo: string;
+}
+const { repo } = Astro.props;
+---
+
+<span id="release-title" style="font-weight: bold"></span>
+<br>
+<a id="download-button" data-repo={repo} href={`https://github.com/${repo}/releases/latest`} class="button" style="margin-left: 0.5em;">
+  Download Latest
+</a>
+<br>
+
+
+<script type="module">
+  // Pass the repo from Astro to JS via a data attribute
+  const repo = document.getElementById("download-button").dataset.repo;
+  const repoName = repo.split("/")[1];
+  const notesContainer = document.getElementById("release-notes");
+
+  async function updateDownloadButton() {
+    try {
+      const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
+      const data = await res.json();
+
+      const version = data.tag_name || "latest";
+      const name = data.name || `${repo}`;
+      const pkgAsset = data.assets?.find(a => a.name?.endsWith(".pkg"));
+      const pkgDownloadUrl = pkgAsset?.browser_download_url || `https://github.com/${repo}/releases/latest`;
+
+      const button = document.getElementById("download-button");
+      button.href = pkgDownloadUrl;
+      button.textContent = `Download from GitHub (pkg)`;
+
+      const versionSpan = document.getElementById("release-title");
+      if (versionSpan) {
+        versionSpan.textContent = `${repoName} ${version} - `;
+      }
+      
+    } catch (err) {
+      console.error("Failed to fetch latest release:", err);
+    }
+  }
+
+  updateDownloadButton();
+</script>
