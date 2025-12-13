@@ -2,15 +2,21 @@
 interface Props {
     source: string;
     removeh1: boolean;
+    subsection: string;
 }
-const {source, removeh1} = Astro.props
+const {source, removeh1, subsection} = Astro.props
 import { Markdown } from 'astro-remote';
 var markdown = await fetch(source).then(res => res.text());
+var idx;
+if (subsection) {
+    const chunks = markdown.split(/^(?=#+ )/m).filter(Boolean);
+    markdown = chunks.find(element => element.includes(subsection))
+   // markdown = chunks[]
+}
 if (removeh1 == '1') {
     markdown = markdown.replace(new RegExp('^# .*'), '')
 }
-
 ---
-<Markdown content={markdown} />
 
+<Markdown content={markdown} />
 <p><em>This document is a replica of <a href={source}>the original</a>.</em></p>
