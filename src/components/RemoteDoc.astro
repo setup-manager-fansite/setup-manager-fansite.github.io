@@ -5,7 +5,7 @@ interface Props {
     subsection: string;
 }
 const {source, removeh1, subsection} = Astro.props
-import { Markdown } from 'astro-remote';
+import { Markdown } from '@astropub/md'
 var markdown = await fetch(source).then(res => res.text());
 var idx;
 if (subsection) {
@@ -18,5 +18,5 @@ if (removeh1 == '1') {
 }
 ---
 
-<Markdown content={markdown} />
+<Markdown of={markdown} />
 <p><em>This document is a replica of <a href={source}>the original</a>.</em></p>
