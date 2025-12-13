@@ -6,8 +6,8 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'Setup Manager Resources',
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/jamf/Setup-Manager' }],
 			sidebar: [
 				{
 					label: 'Guides',
