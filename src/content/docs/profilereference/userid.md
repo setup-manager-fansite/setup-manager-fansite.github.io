@@ -1,5 +1,9 @@
 ---
 title: userID
+sidebar:
+  badge:
+    text: Deprecated
+    variant: caution
 ---
 
 ## Supported on:

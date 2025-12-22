@@ -3,6 +3,7 @@
 profile_manifest_source="https://raw.githubusercontent.com/ProfileManifests/ProfileManifests/refs/heads/master/Manifests/ManagedPreferencesApplications/com.jamf.setupmanager.plist"
 profile_manifest_dest="/tmp/com.jamf.setupmanager.plist"
 profile_manifest_json="/tmp/com.jamf.setupmanager.json"
+latest_version="1.4"
 
 curl -s -o "${profile_manifest_dest}" "${profile_manifest_source}"
 
@@ -36,12 +37,21 @@ jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
     continue;
   fi
   filename=$(echo "${name}" | tr '[:upper:]' '[:lower:]' | tr -d '_')
-  markdown="---${NL}title: ${name}${NL}---"
   min_ver=$(echo "${json_blob}" | jq -r .pfm_app_min)
+  deprecated_ver=$(echo "${json_blob}" | jq -r .pfm_app_deprecated)
+  
+  # Front Matter
+  markdown="---${NL}title: ${name}"
+  if [[ "${min_ver}" == "${latest_version}" ]]; then
+    markdown+="${NL}sidebar:${NL}  badge:${NL}    text: New${NL}    variant: tip"
+  fi
+  if [[ "${deprecated_ver}" != "null" ]]; then
+    markdown+="${NL}sidebar:${NL}  badge:${NL}    text: Deprecated${NL}    variant: caution"
+  fi
+  markdown+="${NL}---"
   if [[ "${min_ver}" == "null" ]]; then min_ver="1.0"; fi
   markdown+="${NL}${NL}## Supported on:${NL}* Setup Manager since version ${min_ver}"
 
-  deprecated_ver=$(echo "${json_blob}" | jq -r .pfm_app_deprecated)
   if [[ "${deprecated_ver}" != "null" ]]; then
     markdown+="${NL}* Deprecated since version ${deprecated_ver}"
   fi

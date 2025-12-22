@@ -1,5 +1,9 @@
 ---
 title: networkQualityCheck
+sidebar:
+  badge:
+    text: New
+    variant: tip
 ---
 
 ## Supported on:

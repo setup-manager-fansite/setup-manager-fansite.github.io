@@ -1,5 +1,9 @@
 ---
 title: finishedMessage
+sidebar:
+  badge:
+    text: New
+    variant: tip
 ---
 
 ## Supported on:

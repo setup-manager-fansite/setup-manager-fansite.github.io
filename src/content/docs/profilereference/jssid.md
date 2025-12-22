@@ -1,5 +1,9 @@
 ---
 title: jssID
+sidebar:
+  badge:
+    text: Deprecated
+    variant: caution
 ---
 
 ## Supported on:
