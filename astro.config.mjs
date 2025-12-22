@@ -16,6 +16,7 @@ export default defineConfig({
 				{
 					label: 'Documentation Replica',
 					autogenerate: { directory: 'docreplica' },
+					collapsed: true,
 				},
 								{
 					label: 'Release Notes',
