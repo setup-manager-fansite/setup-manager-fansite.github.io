@@ -26,7 +26,7 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 mkdir -p "${script_dir}/../src/content/docs/profilereference"
 pushd "${script_dir}/../src/content/docs/profilereference" || exit 1
-rm -rf *
+rm -rf ./*
 
 ignored_keys=("PayloadDescription" "PayloadDisplayName" "PayloadIdentifier" "PayloadType" "PayloadUUID" "PayloadVersion" "PayloadOrganization" "PFC_SegmentedControl_0")
 NL=$'\n'
@@ -34,7 +34,7 @@ index_tmp="index.mdx.tmp"
 
 jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
   name=$(echo "${json_blob}" | jq -r .pfm_name)
-  if [[ " ${ignored_keys[@]} " =~ " ${name} " ]]; then
+  if [[ " ${ignored_keys[*]} " =~ " ${name}" ]]; then
     continue;
   fi
   filename=$(echo "${name}" | tr '[:upper:]' '[:lower:]' | tr -d '_')
@@ -109,4 +109,6 @@ import { LinkCard } from '@astrojs/starlight/components';
 cat "${index_tmp}" >> index.mdx
 rm "${index_tmp}"
 
-popd
+popd || exit 1
+
+exit 0
