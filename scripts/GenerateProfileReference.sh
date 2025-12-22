@@ -26,7 +26,9 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 mkdir -p "${script_dir}/../src/content/docs/profilereference"
 pushd "${script_dir}/../src/content/docs/profilereference" || exit 1
 rm -rf *
+
 ignored_keys=("PayloadDescription" "PayloadDisplayName" "PayloadIdentifier" "PayloadType" "PayloadUUID" "PayloadVersion" "PayloadOrganization" "PFC_SegmentedControl_0")
+NL=$'\n'
 
 jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
   name=$(echo "${json_blob}" | jq -r .pfm_name)
@@ -34,28 +36,18 @@ jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
     continue;
   fi
   filename=$(echo "${name}" | tr '[:upper:]' '[:lower:]' | tr -d '_')
-  markdown="---
-title: ${name}
----"
+  markdown="---${NL}title: ${name}${NL}---"
   min_ver=$(echo "${json_blob}" | jq -r .pfm_app_min)
   if [[ "${min_ver}" == "null" ]]; then min_ver="1.0"; fi
-  markdown="${markdown}
-
-## Supported on:
-* Setup Manager since version ${min_ver}"
+  markdown+="${NL}${NL}## Supported on:${NL}* Setup Manager since version ${min_ver}"
 
   deprecated_ver=$(echo "${json_blob}" | jq -r .pfm_app_deprecated)
   if [[ "${deprecated_ver}" != "null" ]]; then
-    markdown="${markdown}
-* Deprecated since version ${deprecated_ver}"
+    markdown+="${NL}* Deprecated since version ${deprecated_ver}"
   fi
 
   description=$(echo "${json_blob}" | jq -r .pfm_description)
-  markdown="${markdown}
-
-## Description
-
-${description}"
+  markdown+="${NL}${NL}## Description${NL}${NL}${description}"
 
   echo "${markdown}" > "${filename}.md"
 done
