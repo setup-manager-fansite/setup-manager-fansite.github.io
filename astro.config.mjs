@@ -17,6 +17,10 @@ export default defineConfig({
 					label: 'Documentation Replica',
 					autogenerate: { directory: 'docreplica' },
 				},
+								{
+					label: 'Release Notes',
+					link: "releasenotes"
+				},
 			],
 			      customCss: [
         // Relative path to your custom CSS file

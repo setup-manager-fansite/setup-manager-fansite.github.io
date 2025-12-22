@@ -1,0 +1,26 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro'
+import { Markdown } from '@astropub/md'
+import GithubSlugger from 'github-slugger'
+const slugger = new GithubSlugger()
+
+const releases = await fetch('https://api.github.com/repos/jamf/Setup-Manager/releases').then(res => res.json());
+
+var md = ''
+var headings = []
+for (const release of releases) {
+    if (release["prerelease"]) { continue }
+    const ignoredReleases = [ 'v1.0rc', 'v0.9.1-306']
+    const tagName = release['tag_name']
+    if (ignoredReleases.includes(tagName)) { continue }
+    md = md + "## " + tagName+ "\n\n"
+    md = md + release['body']
+    md = md + '\n---\n'
+    headings.push ({ depth: 2, slug: slugger.slug(tagName), text: tagName })
+}
+
+---
+
+<StarlightPage frontmatter={{ title: 'Release Notes History' }} headings={headings} >
+    <Markdown of={md} />
+</StarlightPage>
