@@ -14,6 +14,11 @@ export default defineConfig({
 					slug: "videos",
 				},
 				{
+					label: 'Configuration Profile Reference',
+					autogenerate: { directory: 'profilereference' },
+					collapsed: true,
+				},
+				{
 					label: 'Documentation Replica',
 					autogenerate: { directory: 'docreplica' },
 					collapsed: true,
