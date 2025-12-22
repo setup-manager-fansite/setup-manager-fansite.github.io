@@ -19,8 +19,8 @@ export default defineConfig({
 					collapsed: true,
 				},
 				{
-					label: 'Documentation Replica',
-					autogenerate: { directory: 'docreplica' },
+					label: 'Documentation Mirror',
+					autogenerate: { directory: 'docmirror' },
 					collapsed: true,
 				},
 								{
