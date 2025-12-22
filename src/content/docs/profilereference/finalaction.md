@@ -8,3 +8,7 @@ title: finalAction
 ## Description
 
 Sets the action and label for the button shown when Setup Manger has completed.
+
+## Key type
+
+string

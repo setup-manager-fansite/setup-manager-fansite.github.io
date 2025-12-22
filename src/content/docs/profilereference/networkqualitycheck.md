@@ -12,3 +12,7 @@ sidebar:
 ## Description
 
 Set this key to false to suppress the network quality check.
+
+## Key type
+
+boolean

@@ -8,3 +8,7 @@ title: totalDownloadBytes
 ## Description
 
 Use this value to provide an estimate for the total size of all items that will be downloaded.
+
+## Key type
+
+integer

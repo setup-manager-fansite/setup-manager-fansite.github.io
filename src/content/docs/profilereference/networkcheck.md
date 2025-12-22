@@ -8,3 +8,7 @@ title: networkCheck
 ## Description
 
 Provides a list of hosts to check connectivity to. These will be shown in the 'Connectivity' section in the network info pane. Be sure to read the documentation before configuring.
+
+## Key type
+
+array

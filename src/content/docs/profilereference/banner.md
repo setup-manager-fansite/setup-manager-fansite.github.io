@@ -12,3 +12,7 @@ sidebar:
 ## Description
 
 A banner image or color that covers the top of the Setup Manager window. See the documentation for dimensions. Supports both images (using the same sources as Icon) and colors.
+
+## Key type
+
+string

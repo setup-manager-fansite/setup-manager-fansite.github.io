@@ -8,3 +8,7 @@ title: webhooks
 ## Description
 
 null
+
+## Key type
+
+dictionary

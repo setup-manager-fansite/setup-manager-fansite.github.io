@@ -8,3 +8,7 @@ title: hideActionLabels
 ## Description
 
 Hides the individual labels under each action's icon.
+
+## Key type
+
+boolean

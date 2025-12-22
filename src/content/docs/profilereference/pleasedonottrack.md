@@ -8,3 +8,7 @@ title: PLEASE_DO_NOT_TRACK
 ## Description
 
 Suppress launch tracking by enabling this setting.
+
+## Key type
+
+boolean

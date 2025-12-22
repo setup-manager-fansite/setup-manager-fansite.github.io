@@ -13,3 +13,7 @@ sidebar:
 ## Description
 
 When using JSM with Jamf Pro, set this to $JSSID in a Jamf Pro configuration profile and Setup Manager will be aware of its computer's id in Jamf Pro.
+
+## Key type
+
+string

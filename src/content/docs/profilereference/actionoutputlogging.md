@@ -8,3 +8,7 @@ title: actionOutputLogging
 ## Description
 
 Controls whether the output of actions is written to the Setup Manager log file.
+
+## Key type
+
+string

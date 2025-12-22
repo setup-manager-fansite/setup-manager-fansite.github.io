@@ -8,3 +8,7 @@ title: message
 ## Description
 
 The message shown below the title. Supports Markdown and substitutions.
+
+## Key type
+
+string

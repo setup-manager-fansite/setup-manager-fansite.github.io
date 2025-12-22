@@ -12,3 +12,7 @@ sidebar:
 ## Description
 
 Sets the action tile background color for all action tiles, unless the value is overridden by an individual action's tileColor key.
+
+## Key type
+
+string

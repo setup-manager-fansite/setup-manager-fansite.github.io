@@ -12,3 +12,7 @@ sidebar:
 ## Description
 
 Custom message when Setup Manager workflow is complete. Supports Markdown and substitutions.
+
+## Key type
+
+string
