@@ -77,6 +77,16 @@ jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
   fi
   markdown+="${NL}${NL}## Default value${NL}${NL}${default}"
 
+  # Valid values
+  range_list_json=$(echo "${json_blob}" | jq -c .pfm_range_list)
+  if [[ "${range_list_json}" != "null" ]]; then
+    markdown+="${NL}${NL}## Valid values${NL}"
+    IFS=$'\n'
+    for value in $(echo "${range_list_json}" | jq -r '.[]'); do
+      markdown+="${NL}* \`${value}\`"
+    done
+    unset IFS
+  fi
 
   echo "${markdown}" > "${filename}.md"
 done

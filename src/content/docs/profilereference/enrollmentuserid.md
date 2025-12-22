@@ -20,3 +20,8 @@ string
 ## Default value
 
 _undefined_
+
+## Valid values
+
+* `$EMAIL`
+* `$USERNAME`

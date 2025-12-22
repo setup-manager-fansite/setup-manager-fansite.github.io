@@ -16,3 +16,9 @@ string
 ## Default value
 
 `error`
+
+## Valid values
+
+* `always`
+* `error`
+* `never`

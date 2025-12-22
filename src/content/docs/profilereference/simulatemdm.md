@@ -16,3 +16,8 @@ string
 ## Default value
 
 _undefined_
+
+## Valid values
+
+* `Jamf Pro`
+* `Jamf School`

@@ -21,3 +21,7 @@ string
 ## Default value
 
 _undefined_
+
+## Valid values
+
+* `$JSSID`

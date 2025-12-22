@@ -16,3 +16,8 @@ string
 ## Default value
 
 `enrollment`
+
+## Valid values
+
+* `enrollment`
+* `loginwindow`

@@ -16,3 +16,10 @@ string
 ## Default value
 
 `continue`
+
+## Valid values
+
+* `continue`
+* `restart`
+* `shutdown`
+* `none`
