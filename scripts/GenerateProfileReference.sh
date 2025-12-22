@@ -30,6 +30,7 @@ rm -rf *
 
 ignored_keys=("PayloadDescription" "PayloadDisplayName" "PayloadIdentifier" "PayloadType" "PayloadUUID" "PayloadVersion" "PayloadOrganization" "PFC_SegmentedControl_0")
 NL=$'\n'
+index_tmp="index.mdx.tmp"
 
 jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
   name=$(echo "${json_blob}" | jq -r .pfm_name)
@@ -89,6 +90,23 @@ jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
   fi
 
   echo "${markdown}" > "${filename}.md"
+
+  # index LinkCard
+  short_description=$(echo "${description}" | awk -F '.' '{print $1; exit}' | tr -d '"')
+  echo "<LinkCard title=\"${name}\" href=\"/profilereference/${filename}/\" description=\"${short_description}\" />" >> "${index_tmp}"
 done
+
+# Create index.mdx
+sort -f -o "${index_tmp}" "${index_tmp}"
+echo "---
+title: Configuration Profile Reference
+prev: false
+tableOfContents: false
+pagefind: false
+---
+import { LinkCard } from '@astrojs/starlight/components';
+" > index.mdx
+cat "${index_tmp}" >> index.mdx
+rm "${index_tmp}"
 
 popd
