@@ -39,7 +39,7 @@ jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
   filename=$(echo "${name}" | tr '[:upper:]' '[:lower:]' | tr -d '_')
   min_ver=$(echo "${json_blob}" | jq -r .pfm_app_min)
   deprecated_ver=$(echo "${json_blob}" | jq -r .pfm_app_deprecated)
-  
+
   # Front Matter
   markdown="---${NL}title: ${name}"
   if [[ "${min_ver}" == "${latest_version}" ]]; then
@@ -49,8 +49,10 @@ jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
     markdown+="${NL}sidebar:${NL}  badge:${NL}    text: Deprecated${NL}    variant: caution"
   fi
   markdown+="${NL}---"
+
+  # Availability
   if [[ "${min_ver}" == "null" ]]; then min_ver="1.0"; fi
-  markdown+="${NL}${NL}## Supported on:${NL}* Setup Manager since version ${min_ver}"
+  markdown+="${NL}${NL}## Availability${NL}* Setup Manager since version ${min_ver}"
 
   if [[ "${deprecated_ver}" != "null" ]]; then
     markdown+="${NL}* Deprecated since version ${deprecated_ver}"

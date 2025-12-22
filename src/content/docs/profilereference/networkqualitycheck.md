@@ -6,7 +6,7 @@ sidebar:
     variant: tip
 ---
 
-## Supported on:
+## Availability
 * Setup Manager since version 1.4
 
 ## Description

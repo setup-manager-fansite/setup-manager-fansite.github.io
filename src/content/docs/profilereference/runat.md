@@ -2,7 +2,7 @@
 title: runAt
 ---
 
-## Supported on:
+## Availability
 * Setup Manager since version 1.1
 
 ## Description

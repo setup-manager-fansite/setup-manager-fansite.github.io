@@ -2,7 +2,7 @@
 title: networkCheck
 ---
 
-## Supported on:
+## Availability
 * Setup Manager since version 1.3
 
 ## Description

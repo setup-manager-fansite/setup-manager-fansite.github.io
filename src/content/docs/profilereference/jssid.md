@@ -6,7 +6,7 @@ sidebar:
     variant: caution
 ---
 
-## Supported on:
+## Availability
 * Setup Manager since version 1.0
 * Deprecated since version 1.4
 
