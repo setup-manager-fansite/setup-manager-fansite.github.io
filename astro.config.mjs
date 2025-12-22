@@ -11,7 +11,7 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Videos',
-					autogenerate: { directory: 'videos' },
+					slug: "videos",
 				},
 				{
 					label: 'Documentation Replica',
