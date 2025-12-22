@@ -16,3 +16,7 @@ Set this to $EMAIL in the configuration profile. This communicates the user who 
 ## Key type
 
 string
+
+## Default value
+
+_undefined_

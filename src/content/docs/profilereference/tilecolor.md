@@ -16,3 +16,7 @@ Sets the action tile background color for all action tiles, unless the value is 
 ## Key type
 
 string
+
+## Default value
+
+_undefined_

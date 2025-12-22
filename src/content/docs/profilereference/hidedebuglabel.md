@@ -12,3 +12,7 @@ Suppresses display of the red 'DEBUG' label in debug mode.
 ## Key type
 
 boolean
+
+## Default value
+
+`false`

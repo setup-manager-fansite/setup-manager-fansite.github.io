@@ -12,3 +12,7 @@ A custom Jamf Pro policy trigger which will be executed after Setup Manager has 
 ## Key type
 
 string
+
+## Default value
+
+_undefined_

@@ -17,3 +17,7 @@ When using JSM with Jamf Pro, set this to $JSSID in a Jamf Pro configuration pro
 ## Key type
 
 string
+
+## Default value
+
+_undefined_

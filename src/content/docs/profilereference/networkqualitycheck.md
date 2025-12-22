@@ -16,3 +16,7 @@ Set this key to false to suppress the network quality check.
 ## Key type
 
 boolean
+
+## Default value
+
+`true`

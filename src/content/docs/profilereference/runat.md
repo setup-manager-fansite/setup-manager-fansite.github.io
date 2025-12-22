@@ -12,3 +12,7 @@ This value determines when Setup Manager should launch.
 ## Key type
 
 string
+
+## Default value
+
+`enrollment`

@@ -12,3 +12,7 @@ When set, Setup Manager displays the image full screen as a background behind th
 ## Key type
 
 string
+
+## Default value
+
+_undefined_

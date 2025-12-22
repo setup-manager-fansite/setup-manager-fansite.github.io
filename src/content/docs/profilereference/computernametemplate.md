@@ -12,3 +12,7 @@ Setup Manager will generate the computer name from this template and set it auto
 ## Key type
 
 string
+
+## Default value
+
+_undefined_

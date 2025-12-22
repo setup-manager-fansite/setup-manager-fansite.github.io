@@ -12,3 +12,7 @@ When debug mode is enabled, you can set this to Jamf Pro or Jamf School. This al
 ## Key type
 
 string
+
+## Default value
+
+_undefined_

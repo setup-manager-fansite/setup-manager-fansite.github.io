@@ -12,3 +12,7 @@ When any of these are defined, Setup Manager will prompt for user data while the
 ## Key type
 
 dictionary
+
+## Default value
+
+_undefined_

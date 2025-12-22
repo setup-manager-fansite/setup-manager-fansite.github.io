@@ -12,3 +12,7 @@ When set, the "About this Mac" info window will show this value instead of the r
 ## Key type
 
 string
+
+## Default value
+
+_undefined_

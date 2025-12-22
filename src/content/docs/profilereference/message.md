@@ -12,3 +12,7 @@ The message shown below the title. Supports Markdown and substitutions.
 ## Key type
 
 string
+
+## Default value
+
+`Setup Manager is configuring your Mac…`

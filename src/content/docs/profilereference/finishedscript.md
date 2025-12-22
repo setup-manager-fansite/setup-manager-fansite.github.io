@@ -12,3 +12,7 @@ A full path to a script file which will be executed after Setup Manager has fini
 ## Key type
 
 string
+
+## Default value
+
+_undefined_

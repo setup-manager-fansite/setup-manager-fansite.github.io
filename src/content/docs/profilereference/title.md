@@ -13,3 +13,7 @@ The main title over the window. Supports substitutions.
 ## Key type
 
 string
+
+## Default value
+
+`Welcome to Setup Manager`

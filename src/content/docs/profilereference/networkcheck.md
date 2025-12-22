@@ -12,3 +12,7 @@ Provides a list of hosts to check connectivity to. These will be shown in the 'C
 ## Key type
 
 array
+
+## Default value
+
+_undefined_

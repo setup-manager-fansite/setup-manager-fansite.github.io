@@ -16,3 +16,7 @@ A banner image or color that covers the top of the Setup Manager window. See the
 ## Key type
 
 string
+
+## Default value
+
+_undefined_

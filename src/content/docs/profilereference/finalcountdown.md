@@ -12,3 +12,7 @@ Changes the duration (in seconds) of the "final countdown" before the app automa
 ## Key type
 
 integer
+
+## Default value
+
+`60`

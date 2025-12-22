@@ -16,3 +16,7 @@ Custom message when Setup Manager workflow is complete. Supports Markdown and su
 ## Key type
 
 string
+
+## Default value
+
+_undefined_

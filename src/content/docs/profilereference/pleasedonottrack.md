@@ -12,3 +12,7 @@ Suppress launch tracking by enabling this setting.
 ## Key type
 
 boolean
+
+## Default value
+
+`false`

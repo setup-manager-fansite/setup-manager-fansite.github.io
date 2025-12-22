@@ -66,6 +66,18 @@ jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
   type=$(echo "${json_blob}" | jq -r .pfm_type)
   markdown+="${NL}${NL}## Key type${NL}${NL}${type}"
 
+  # Default value
+  default=$(echo "${json_blob}" | jq -r .pfm_default)
+  if [[ "${default}" == "null" && "${type}" == "boolean" ]]; then
+    default="\`false\`"
+  elif [[ "${default}" == "null" ]]; then
+    default="_undefined_"
+  else 
+    default="\`${default}\`"
+  fi
+  markdown+="${NL}${NL}## Default value${NL}${NL}${default}"
+
+
   echo "${markdown}" > "${filename}.md"
 done
 

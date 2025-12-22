@@ -12,3 +12,7 @@ Use this value to provide an estimate for the total size of all items that will 
 ## Key type
 
 integer
+
+## Default value
+
+_undefined_

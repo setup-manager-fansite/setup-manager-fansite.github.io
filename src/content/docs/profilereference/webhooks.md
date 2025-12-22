@@ -12,3 +12,7 @@ null
 ## Key type
 
 dictionary
+
+## Default value
+
+_undefined_

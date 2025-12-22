@@ -12,3 +12,7 @@ Enables debug mode. See documentation for behavior changes.
 ## Key type
 
 boolean
+
+## Default value
+
+`false`

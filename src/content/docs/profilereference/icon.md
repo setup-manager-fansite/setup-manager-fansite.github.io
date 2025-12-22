@@ -13,3 +13,7 @@ The icon shown at the top center of the window. There are many options to define
 ## Key type
 
 string
+
+## Default value
+
+`name:AppIcon`

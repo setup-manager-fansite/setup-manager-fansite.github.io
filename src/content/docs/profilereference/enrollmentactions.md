@@ -12,3 +12,7 @@ Describes the individual actions to be performed by Setup Manager. For each row,
 ## Key type
 
 array
+
+## Default value
+
+_undefined_

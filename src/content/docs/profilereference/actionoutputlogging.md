@@ -12,3 +12,7 @@ Controls whether the output of actions is written to the Setup Manager log file.
 ## Key type
 
 string
+
+## Default value
+
+`error`

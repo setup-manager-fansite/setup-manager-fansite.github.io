@@ -12,3 +12,7 @@ When you provide help, a help button (with a circled question mark) will be show
 ## Key type
 
 dictionary
+
+## Default value
+
+_undefined_

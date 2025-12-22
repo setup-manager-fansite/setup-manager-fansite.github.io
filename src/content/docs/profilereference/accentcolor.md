@@ -12,3 +12,7 @@ Sets the accent color for buttons, progress bar, SF Symbol icons, and other UI e
 ## Key type
 
 string
+
+## Default value
+
+_undefined_
