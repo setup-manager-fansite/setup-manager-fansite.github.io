@@ -1,25 +1,15 @@
 ---
-title: Setup Manager Resources
-description: Get started building your docs site with Starlight.
+title: Setup Manager Fansite
 template: splash # Remove or comment out this line to display the site sidebar on this page.
 hero:
   tagline: A community-run website dedicated to assisting Mac administrators in maximizing the benefits of Jamf Setup Manager.
   image:
     file: ../../assets/SetupManager.png
-  actions:
-    - text: Example Guide
-      link: /guides/example/
-      icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
-      variant: minimal
+
 ---
 import DownloadButton from '../../components/DownloadButton.astro';
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
-
-## Next steps
 
 <CardGrid stagger>
 	<Card title="Latest Release" icon="download">
@@ -29,13 +19,10 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 	<Card title="Videos" icon="youtube">
 		[Check out the video archive](/videos)
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="Get community support" icon="slack">
+		Join [#jamf-setup-manager](https://macadmins.slack.com/archives/jamf-setup-manager) in the Mac Admins Slack!
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="Need to make a feature request or file a bug report?" icon="pen	">
+		[Search existing issues](https://github.com/jamf/Setup-Manager/issues) or [compose your own](https://github.com/jamf/Setup-Manager/issues/new/choose).
 	</Card>
 </CardGrid>

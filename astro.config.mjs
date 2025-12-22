@@ -6,7 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'Setup Manager Resources',
+			title: 'Setup Manager Fansite',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/jamf/Setup-Manager' }],
 			sidebar: [
 				{
@@ -18,6 +18,10 @@ export default defineConfig({
 					autogenerate: { directory: 'docreplica' },
 				},
 			],
+			      customCss: [
+        // Relative path to your custom CSS file
+        './src/styles/custom.css',
+      ],
 		}),
 	],
 });
