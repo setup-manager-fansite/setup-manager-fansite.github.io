@@ -20,3 +20,13 @@ _undefined_
 ## Valid values
 
 Any valid [color notation](/docmirror/colors).
+
+## Examples
+```xml
+<key>accentColor</key>
+<string>#FF00AA</string>
+```
+```xml
+<key>accentColor</key>
+<string>##green</string>
+```
