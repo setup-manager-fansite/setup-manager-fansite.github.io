@@ -94,6 +94,18 @@ jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
     markdown+="${NL}${NL}## Valid values${NL}${NL}Any valid [color notation](/docmirror/colors)."
   fi
 
+  # Examples
+  examples=$(ls "${script_dir}/ProfileReferenceExamples/${name}"*.plist 2> /dev/null)
+  if [[ -n "${examples}" ]]; then
+    markdown+="${NL}${NL}## Examples"
+    for file in "${script_dir}/ProfileReferenceExamples/${name}"*.plist; do
+      if plutil "${file}"; then
+        example=$(plutil -convert xml1 -o - "${file}" | xpath -q -e '/plist/dict/*' | awk -v RS='' '{gsub(/\n\t/, "\n")}1')
+        markdown+="${NL}\`\`\`xml${NL}${example}${NL}\`\`\`"
+      fi
+    done
+  fi
+  
   echo "${markdown}" > "${filename}.md"
 
   # index LinkCard
