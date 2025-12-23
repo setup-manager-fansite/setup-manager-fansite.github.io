@@ -16,3 +16,7 @@ string
 ## Default value
 
 _undefined_
+
+## Valid values
+
+Any valid [color notation](/docmirror/colors).

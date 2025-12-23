@@ -89,6 +89,11 @@ jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
     unset IFS
   fi
 
+  # Color valid values
+  if [[ "${description}" == *"color"* ]]; then
+    markdown+="${NL}${NL}## Valid values${NL}${NL}Any valid [color notation](/docmirror/colors)."
+  fi
+
   echo "${markdown}" > "${filename}.md"
 
   # index LinkCard
