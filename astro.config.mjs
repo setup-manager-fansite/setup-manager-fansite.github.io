@@ -11,6 +11,10 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/jamf/Setup-Manager' }],
 			sidebar: [
 				{
+					label: 'Articles',
+					slug: "articles",
+				},
+				{
 					label: 'Videos',
 					slug: "videos",
 				},
