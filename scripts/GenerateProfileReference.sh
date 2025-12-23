@@ -60,7 +60,7 @@ jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
   fi
 
   # Description
-  description=$(echo "${json_blob}" | jq -r .pfm_description)
+  description=$(echo "${json_blob}" | jq -r .pfm_description | sed G)
   markdown+="${NL}${NL}## Description${NL}${NL}${description}"
 
   # Data type
