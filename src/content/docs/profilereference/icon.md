@@ -1,5 +1,9 @@
 ---
 title: icon
+sidebar:
+  badge:
+    text: Updated
+    variant: note
 ---
 
 ## Availability

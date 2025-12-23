@@ -40,14 +40,16 @@ jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
   filename=$(echo "${name}" | tr '[:upper:]' '[:lower:]' | tr -d '_')
   min_ver=$(echo "${json_blob}" | jq -r .pfm_app_min)
   deprecated_ver=$(echo "${json_blob}" | jq -r .pfm_app_deprecated)
+  description=$(echo "${json_blob}" | jq -r .pfm_description | sed G)
 
   # Front Matter
   markdown="---${NL}title: ${name}"
   if [[ "${min_ver}" == "${latest_version}" ]]; then
     markdown+="${NL}sidebar:${NL}  badge:${NL}    text: New${NL}    variant: tip"
-  fi
-  if [[ "${deprecated_ver}" != "null" ]]; then
+  elif [[ "${deprecated_ver}" != "null" ]]; then
     markdown+="${NL}sidebar:${NL}  badge:${NL}    text: Deprecated${NL}    variant: caution"
+  elif [[ "${description}" == *"${latest_version}"* ]]; then
+    markdown+="${NL}sidebar:${NL}  badge:${NL}    text: Updated${NL}    variant: note"
   fi
   markdown+="${NL}---"
 
@@ -60,7 +62,6 @@ jq -c '.pfm_subkeys.[]' "${profile_manifest_json}" | while read -r json_blob; do
   fi
 
   # Description
-  description=$(echo "${json_blob}" | jq -r .pfm_description | sed G)
   markdown+="${NL}${NL}## Description${NL}${NL}${description}"
 
   # Data type
